@@ -1,0 +1,10 @@
+All books here by {{ category }}<br>
+
+
+{% for i in books %}
+    /b{{ i.id }} :
+    {{ i.title }}<br>
+{% endfor %}
+
+<br>
+
