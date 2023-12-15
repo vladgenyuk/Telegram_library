@@ -7,7 +7,9 @@ from digitalize_bot import config
 from digitalize_bot.db import async_session_maker
 from digitalize_bot.handlers.keyboard import get_categories_keyboard
 from digitalize_bot.handlers.response import send_response
-from digitalize_bot.models.books import book, Book
+
+from digitalize_bot.crud.book_crud import book
+from digitalize_bot.models.books import Book
 from digitalize_bot.templates import render_template
 
 
@@ -28,10 +30,8 @@ def group_by_categories(books: list[Book]) -> dict:
 
 async def all_books(update: Update, context: ContextTypes.DEFAULT_TYPE):
     session = async_session_maker()
-    # await category.create_category(session, None)
     books = await book.get_all_books(session)
     categories_with_books = group_by_categories(books)
-    # await book.create_book(session, None)
 
     if not update.message:
         return

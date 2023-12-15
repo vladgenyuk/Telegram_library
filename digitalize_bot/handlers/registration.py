@@ -7,7 +7,7 @@ from telegram.ext import ContextTypes, ConversationHandler,\
 from sqlalchemy.exc import IntegrityError
 
 from digitalize_bot.db import async_session_maker
-from digitalize_bot.models.users import user
+from digitalize_bot.crud.user_crud import user
 
 
 FIRST_NAME, LAST_NAME, EMAIL = range(3)

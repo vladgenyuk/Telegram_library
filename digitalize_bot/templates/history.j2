@@ -1,0 +1,9 @@
+Книги, прочитанные вами.<br>
+
+{% for i in history %}
+    <b>{{ i.title }}</b><br>
+    Взята: {{ i.UsersBooks.issued_at }}<br>
+    Возвращена: {{ i.UsersBooks.returned_at }}<br>
+{% endfor %}
+
+<br>

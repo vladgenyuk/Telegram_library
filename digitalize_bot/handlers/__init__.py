@@ -6,6 +6,7 @@ from .create_models import create_book, create_category
 from .borrower import handle_borrow_number
 from .returner import handle_return_number
 from .my_books import my_books
+from .reading_history import reading_history
 
 __all__ = [
     'start',
@@ -17,5 +18,6 @@ __all__ = [
     'create_category',
     'handle_borrow_number',
     'handle_return_number',
-    'my_books'
+    'my_books',
+    'reading_history'
 ]

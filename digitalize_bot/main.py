@@ -11,7 +11,7 @@ from telegram.ext import (
 from digitalize_bot import config, handlers
 
 
-if not config.BOT_TOKEN:# or not config.BOT_CHANNEL_ID:
+if not config.BOT_TOKEN:
     raise ValueError(
         'BOT_TOKEN or BOT_CHANNEL_ID env variables'
         'was not provided in .env (both should be initialized)'
@@ -23,7 +23,8 @@ COMMAND_HANDLERS = {
     'all_books': handlers.all_books,
     'create_book': handlers.create_book,
     'create_category': handlers.create_category,
-    'my_books': handlers.my_books
+    'my_books': handlers.my_books,
+    'reading_history': handlers.reading_history,
 }
 
 CALLBACK_QUERY_HANDLERS = {
@@ -59,5 +60,3 @@ if __name__ == '__main__':
         main()
     except Exception as e:
         import traceback
-
-        # logger.warning(traceback.format_exc())
